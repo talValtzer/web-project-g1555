@@ -1,0 +1,66 @@
+/*@import "variables.css";
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--xsite-font-family);
+}
+
+a[href] {
+    color: var(--link-color);
+}
+
+a[href]:visited {
+    color: var(--visited-link-color);
+}
+
+a[href]:active {
+    color: var(--active-link-color);
+}*/
+@font-face {
+  font-family: myFont;
+  src: url(../Handlee/Handlee-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: myFont ;
+  }
+
+  body {
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+header{
+  background-image: url(../media/hands.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  position:static;
+
+  width: 100%;
+  position: relative;
+  top: -35px;
+  min-width: 250px;
+  min-height: 80px;
+}
+
+.Titels{
+  text-align: center;
+}
+
+.Titels h1{
+  font-size: 50px;
+
+}
+.Titels h2{
+  font-size: 30px;
+
+
+  padding-bottom: 50px;
+}

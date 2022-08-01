@@ -1,0 +1,131 @@
+#containerMP {
+    color: #e0adaf;
+    grid-template-rows: 100px 200px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+
+
+    grid-template-areas: 'textM textM second'
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+
+}
+
+#textMap {
+    grid-area: textM;
+}
+
+#map2 {
+    margin-top: 50px;
+    width: 500px;
+    height: 380px;
+    grid-area: map;
+}
+
+#Info {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: second;
+}
+
+
+.img-card {
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+    filter: grayscale(1) opacity(.8);
+}
+
+.img-card:hover {
+    filter: grayscale(0) opacity(1);
+    /*   box-shadow:  0px 8px 4px rgba(0, 0, 0, 0.3),
+                   0px 10px 2px rgba(0, 0, 0, 0.1); */
+}
+
+.img-card::before,
+.img-card::after {
+    transform: scaleX(-1);
+}
+
+/*reflection*/
+.img-card:hover::after {
+    content: '';
+    background-image: inherit;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: inherit;
+    height: 40%;
+    position: absolute;
+
+    bottom: -25%;
+}
+
+/*fade reflection*/
+.img-card:hover::before {
+    content: '';
+    width: inherit;
+    height: 42%;
+    position: absolute;
+
+    bottom: -25%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .9), rgba(255, 255, 255, .5));
+    z-index: 1;
+}
+
+.img1 {
+    background-image: url(../media/duck.jpg);
+}
+
+.img2 {
+    background-image: url(../media/swimming.jpg);
+}
+
+.img3 {
+    background-image: url(../media/football.jpg);
+}
+
+.userName_Sessin {
+    color: #a0aeda;
+}
+
+#containerMP {
+    grid-template-rows: 100px 200px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+
+
+    grid-template-areas: 'textM textM second'
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+  'map map second '
+
+}
+
+
+
+
+
+#singInTitle {
+    text-align: center;
+    color: rgb(201, 178, 155);
+}
+
+
+
+

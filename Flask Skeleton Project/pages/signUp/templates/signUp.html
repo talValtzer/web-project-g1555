@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('signUp.static', filename='css/signUp.css') }}"/>
+    <script defer src="{{ url_for('signUp.static' ,filename='js/signUp.js') }}"></script>
+</head>
+
+<body>
+<div id="singInTitle"><h1> Welcome To TrainGether
+</h1>
+</div>
+
+<form id="SignForm" action="/newUser" method="post">
+
+    <!-- One "tab" for each step in the form: -->
+
+    <div class="tab"> Signin Info:
+
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Name">First Name:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="text" id="Desc" name="First Name" placeholder="First Name...">
+            </div>
+        </div>
+
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Name">Last Name:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="text" id="Desc" name="Last Name" placeholder="Last Name...">
+            </div>
+        </div>
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Name"> Email:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="email" id="Desc" name="Email" placeholder="You Email...">
+            </div>
+        </div>
+
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Name">User name:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="text" id="Desc" name="User Name" placeholder="User Name...">
+            </div>
+        </div>
+
+
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Name">Password:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="password" id="Desc" name="Password" placeholder="Password...">
+            </div>
+        </div>
+    </div>
+
+
+    <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+    </div>
+
+
+    <div class="tab">About you:
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Academic">Gender :</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <select id="Gender" name="Gender"><!-- add gender id for TRX-->
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Desc">Academic Institution:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <select id="Academic" name="Academic">
+                    <option value="BGU">BGU</option>
+                    <option value="Ariel">Ariel</option>
+                    <option value="SCE">SCE</option>
+                    <option value="Bar Ilan">Bar Ilan</option>
+                    <option value="Tel Aviv University">Tel Aviv University</option>
+                </select>
+            </div>
+        </div>
+
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Desc">Living city:</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <select id="City" name="City">
+                    <option value="Beer Sheva">Beer Sheva</option>
+                    <option value="Afula">Afula</option>
+                    <option value="Ashkelon">Ashkelon</option>
+                    <option value="Tel Aviv">Tel Aviv</option>
+                    <option value="Ashdod">Ashdod</option>
+                    <option value="Modi'in">Modi'in</option>
+                    <option value="Kiriay Shmona">Kiriay Shmona</option>
+                </select>
+            </div>
+            <p>
+            <div class="row"></div>
+            <div class="col-25">
+                <label for="Desc">Age</label>
+            </div>
+            </p>
+            <div class="col-75">
+                <input type="number" name="Age" id="num_of_participants" min="14" max="75" placeholder="Age...">
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <div class="tab">Other details:
+        <p>
+        <div class="row">
+            <div class="col-25">
+                <label for="Academic">About You:</label>
+            </div>
+            </p>
+
+            <div class="col-75">
+                <input type="text" id="Desc" name="About Me"> <!-- added Date id for TRX-->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+
+    </div>
+
+</form>
+{% include('footer.html') %}
+
+</body>
+</html>

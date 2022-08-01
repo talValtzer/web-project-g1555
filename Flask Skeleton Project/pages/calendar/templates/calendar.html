@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Calendar{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('calendar.static', filename='css/calendar.css') }}"/>
+        <script defer src="{{ url_for('calendar.static' ,filename='js/calendar.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Details</h1>
+    <h2>My Profile</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="containerCalendar">
+        <div class="Calendar">
+            <div class="month">
+                <i class="fas fa-angle-left prev">&#10094;</i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fas fa-angle-right next">&#10095;</i>
+            </div>
+            <div class="weekdays">
+                <div>S</div>
+                <div>M</div>
+                <div>T</div>
+                <div>W</div>
+                <div>T</div>
+                <div>F</div>
+                <div>S</div>
+            </div>
+            <div class="days">
+            </div>
+        </div>
+        <div class="legend">
+            <div class="yogaTime">Yoga</div>
+            <div class="TRXTime">TRX</div>
+            <div class="PilatesTime">Pilates</div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,167 @@
+.see_details {
+    padding: 30px;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+/*for Search page */
+.col-10 {
+    float: left;
+    width: 15%; /*the gap between the "Range time" label to "From/To" labels */
+    margin-top: 6px;
+}
+
+/*for Search page */
+.col-35 {
+    float: left;
+    width: 10%; /*the gap between the "From/To" labels to the select */
+    margin-top: 6px;
+}
+
+/*for pages TRX and Search*/
+.col-50 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+
+/*28.5*/
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#SearchBtn {
+    margin-left: 40%;
+    width: 200px;
+    font-size: 30px;
+}
+
+#tableCenter {
+    margin-left: 30%;
+    width: 200px;
+    font-size: 30px;
+}
+
+.badInput {
+    display: none;
+    color: red;
+    margin-left: 40%;
+    bottom: 0%;
+}
+
+
+#containerWorkoutsSearch {
+    display: none;
+    margin-left: 25%;
+}
+
+/*----table-------*/
+
+
+th, td {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: large;
+    display: compact;
+}
+
+th {
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+tr:hover {
+    /*  background-color: #94b9c9cf; */
+}
+
+thead {
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
+    font-size: large;
+    text-align: left;
+}
+
+table {
+    grid-area: main;
+}
+
+
+.containerSearchTable {
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+}
+
+.tableCenter {
+    border: 3px solid #41b3b3;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+
+/* The Modal (background) */
+.modalTable {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(148, 145, 145);
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modalTable-content {
+    background-color: rgb(255, 255, 255);
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid rgb(0, 0, 0);
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}

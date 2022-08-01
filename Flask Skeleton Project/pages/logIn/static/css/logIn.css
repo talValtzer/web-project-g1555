@@ -1,0 +1,220 @@
+.LogInBody {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+/*--------------------log in title-------------------*/
+
+.AnimationLogIn-num {
+    animation: color-animation 3s linear infinite;
+    text-align: center;
+}
+
+.one {
+    --color-1: #000000;
+    --color-2: #47494a;
+}
+
+.two {
+    --color-1: #a1a1a6;
+    --color-2: #000000;
+}
+
+
+@keyframes color-animation {
+    0% {
+        color: var(--color-1)
+    }
+    32% {
+        color: var(--color-1)
+    }
+    33% {
+        color: var(--color-2)
+    }
+    65% {
+        color: var(--color-2)
+    }
+    100% {
+        color: var(--color-1)
+    }
+}
+
+
+.LogInTitle {
+    display: grid;
+    place-items: center;
+    top: 0;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.LogInTitle h1{
+    color: red;
+}
+
+.AnimationLogIn {
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 15vh;
+    text-transform: uppercase;
+}
+
+
+.LogInBotton {
+    font-size: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000000;
+    color: white;
+    width: 10%;
+    padding: 1vh 3vh;
+    border: none;
+    border-radius: 4%;
+    cursor: pointer;
+
+}
+
+.LogInBotton:hover {
+    opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.SportMan {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(148, 145, 145);
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(255, 255, 255);
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid rgb(0, 0, 0);
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    font-size: 3vh;
+    width: auto;
+    background-color: #f44336;
+    width: 10%;
+    padding: 1vh 3vh;
+    border: none;
+    border-radius: 4%;
+    cursor: pointer;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(../Handlee/Handlee-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: myFont;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=text], select, textarea, input[type=date], input[type=time], #PickTrainType {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}

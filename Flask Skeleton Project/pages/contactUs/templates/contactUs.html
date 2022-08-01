@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('contactUs.static', filename='css/contactUs.css') }}"/>
+    <script defer src="{{ url_for('contactUs.static' ,filename='js/contactUs.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>Contact Us</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="contact">
+        <h3>Email: <a title="coralel@post.bgu.ac.il" href="mailto:coralel@post.bgu.ac.il">coralel@post.bgu.ac.il</a>
+        </h3>
+        <h3>Email: <a title="TalVal@post.bgu.ac.il" href="mailto:TalVal@post.bgu.ac.il">TalVal@post.bgu.ac.il</a></h3>
+        <h3>Email: <a title="inbarduv@post.bgu.ac.il" href="mailto:inbarduv@post.bgu.ac.il">inbarduv@post.bgu.ac.il</a>
+        </h3>
+        <h3>Email: <a title="yonirab@post.bgu.ac.il" href="mailto:yonirab@post.bgu.ac.il">yonirab@post.bgu.ac.il</a>
+        </h3>
+        <h3>אורח יקר אנו שמחים על ביקורך באתר נחזור לפנייתך בהקדם</h3>
+        <h3> אנא השאיר פרטים מלאים בצירוף לפנייתך</h3>
+    </div>
+
+    <nav>
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">Full Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="firstname" placeholder="Your name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="Email" name="Email" placeholder="Your Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">User Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="Uname" name="UserName" placeholder="Your user name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="AboutMe">Tell us</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="AboutMe" name="AboutMe" placeholder="Write something about you.."
+                                  style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="contact">
+        <h2>תודה רבה על פנייתך </h2>
+    </div>
+
+
+
+
+{% endblock %}
+

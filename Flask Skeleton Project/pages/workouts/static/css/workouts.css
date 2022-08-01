@@ -1,0 +1,111 @@
+/* Other styles*/
+#containerWorkouts {
+
+    grid-template-rows: 100px 200px;
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    grid-template-areas: 'main main main main btn'
+  'main main main main btn'
+    'main main main main btn'
+    'main main main main btn'
+}
+
+@media only screen and  (max-width: 800px) {
+
+
+    #containerWorkouts {
+        grid-template-rows: 200px 200px;
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-areas: 'btn btn'
+      'main main'
+      'main main';
+    }
+}
+
+#AddBtnD .addBtn {
+
+
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
+    margin: 35px 0 0 -50px;
+
+
+    background-image: url(../media/add.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+
+    align-self: flex-end;
+    width: 100px;
+    height: 100px;
+
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.addBtn:hover {
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#AddBtnD {
+    text-align: center;
+    height: 130px;;
+    color: #81c6cf;
+    grid-area: btn;
+}
+
+.myWorkoutsContainer {
+    grid-area: main;
+    text-align: center;
+    width: 100%;
+}
+
+.containerWorkout {
+    border: 3px solid #41b3b3;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+
+
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #94b9c9cf;
+}
+
+thead {
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
+    font-size: larger;
+}

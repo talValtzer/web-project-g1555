@@ -1,0 +1,147 @@
+#Edit, #FinishEdit{
+  display: block;
+  background-color: #000000;
+  color: white;
+  width: 100px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+#Edit:hover, #FinishEdit:hover{
+  background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
+
+}
+
+/*fill details input box style */
+input[type=text], select, textarea, input[type=date], input[type=time], #PickTrainType {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input:disabled, select:disabled, textarea:disabled {
+  color: #777;
+  background: rgb(226, 225, 225);
+}
+
+#Edit:disabled, #FinishEdit:disabled{
+  background-color: #474747;
+  background: #474747;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit]:hover {
+  background-color: #5e625f;
+}
+
+.containerForm {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/*for Search page */
+ .col-10{
+  float: left;
+  width: 15%; /*the gap between the "Range time" label to "From/To" labels */
+  margin-top: 6px;
+}
+
+/*for Search page */
+.col-35{
+  float: left;
+  width: 10%;/*the gap between the "From/To" labels to the select */
+  margin-top: 6px;
+}
+
+/*for pages TRX and Search*/
+.col-50{
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+/*28.5*/
+.col-75 {
+  float: left;
+  width: 40%;
+  margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.containerMyDetails, .containerMyDetailsSmall{
+  border: 6px solid;
+  border-radius: 40px;
+  margin: 10px auto;
+  padding: 10px;
+  align-content: center;
+
+}
+
+.containerMyDetailsSmall{
+  border-color: rgb(161, 173, 216);
+  display: inline-block;
+  width: 280px;
+
+}
+
+.containerMyDetails{
+  border-color: rgb(223, 172, 176);
+  width:30%;
+    border-style: outset;
+
+
+
+}
+
+.Details {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(148, 145, 145);
+    padding-top: 60px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}

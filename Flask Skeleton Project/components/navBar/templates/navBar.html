@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('navBar.static', filename='css/navBar.css') }}"/>
+    <script defer src="{{ url_for('navBar.static' ,filename='js/navBar.js') }}"></script>
+
+</head>
+<body>
+<div class="navbar">
+    <img src="{{ url_for('navBar.static',filename='media/logo2.PNG') }}" alt="" id="logo">
+    <a href="/">Home Page</a>
+    <a href="/search">Search</a>
+    <div class="dropdown">
+        <button class="dropbtn">My Profile <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <div class="header">
+            </div>
+            <div class="row">
+                <div class="column">
+                    <a href="/myProfile">My details</a>
+                    <a href="/workouts">Workouts</a>
+                    <a href="/calendar2">Calendar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

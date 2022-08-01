@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+    <script defer src="{{ url_for('homepage.static' ,filename='js/homepage.js') }}"></script>
+
+
+{% endblock %}
+
+
+{% block bodyTitle %}
+
+    <h1>Welcome To TrainGether</h1>
+
+
+    <h2>You have reached a place where you can find partners for every training,</h2>
+    <h2> get motivated, create experiences, and meet new partners.</h2>
+{% endblock %}
+
+{% block content %}
+    {% if session['user'] %}
+        <h3 class="userName_Sessin">Hello {{ session['user'] }} </h3>
+    {% endif %}
+
+    <div id="containerMP">
+        <div id="textMap">
+            <p>
+            <h2>Watch workouts near you today</h2>
+            </p>
+        </div>
+
+        <div id="map2">
+
+
+        </div>
+        <input name="lat" id="latlng" value="{{ listworkouts }}">
+
+
+        <div id="Info">
+            <div class="images-selector">
+                <input type="radio" id="duck" name="image" value="duck">
+                <label for="duck" class="img-card img1"></label>
+                <input type="radio" id="dog" name="image" value="dog">
+                <label for="dog" class="img-card img2"></label>
+                <input type="radio" id="cat" name="image" value="cat">
+                <label for="cat" class="img-card img3"></label>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
+    <script
+            src="https://polyfill.io/v3/polyfill.min.js?features=default"
+            defer
+    ></script>
+
+
+{% endblock %}

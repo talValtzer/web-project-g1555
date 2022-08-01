@@ -1,0 +1,139 @@
+.train_text_box {
+    border-style: outset;
+    /*  margin-left: center;  put text_box in the center*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.p1 {
+    font-size: 20px;
+}
+
+.see_details {
+    padding: 30px;
+}
+
+.badInput {
+    color: red;
+    margin-left: 30%;
+    bottom: 0%;
+}
+
+/* the position of the join button*/
+#joinUNbutton {
+    margin-top: -10%;
+    margin-right: 20%;
+    float: right;
+    border-radius: 50%;
+
+
+}
+
+.joinBtn {
+    background-image: url(../media/JoinWorkout.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: flex-end;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+/*
+#joinBtn { /* affect the text
+    text-align: center;
+    color: #81c6cf;
+    font-size: 25px;
+}*/
+
+.delete_me {
+
+    background-image: url(../media/Unsubscribe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: flex-end;
+    margin-top: -4%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
+}
+
+#Unsubscribe {
+    text-align: center;
+    color: #81c6cf;
+    font-size: 25px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #94b9c9cf;
+}
+
+thead {
+
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
+    font-size: larger;
+}
+
+table {
+
+    grid-area: main;
+}
+
+.containerWorkout {
+    border: 3px solid #41b3b3;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#add {
+    width: 200px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#map2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 380px;
+    grid-area: map;
+
+
+}

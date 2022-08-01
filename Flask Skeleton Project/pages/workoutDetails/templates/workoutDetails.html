@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}Workouts details{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('workoutDetails.static', filename='css/workoutDetails.css') }}"/>
+    <script defer src="{{ url_for('workoutDetails.static' ,filename='js/workoutDetails.js') }}"></script>
+    <script defer src="{{ url_for('workoutDetails.static' ,filename='js/workoutDetails2.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Details</h1>
+    <h2>Workouts Details </h2>
+
+    {% if session['user'] %}
+        <h3 class="userName_Sessin"> {{ session['user'] }} </h3>
+    {% endif %}
+
+
+    <h1>{% if session['user'] %}
+        <h1 class="userName_Sessin"> {{ workout['Workout_type'] }} </h1>
+    {% endif %}</h1>
+
+{% endblock %}
+
+{% block content %}
+    <div class="train_text_box">
+        <p1>
+            {{ workout['description'] }}
+        </p1>
+    </div>
+
+    <div class="see_details">
+        <div class="row">
+            <div class="col-25">
+                <label for="Creator">Creator:</label>
+            </div>
+            <div class="col-75">
+                <p class="output1" id="work_Creator"> {{ workout['user_host'] }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="date">Date:</label>
+            </div>
+            <div class="col-75">
+                <p class="output2" id="work_Date"> {{ workout['workout_date'] }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="Time">Time:</label>
+            </div>
+            <div class="col-75">
+                <p class="output3" id="work_Time">{{ workout['workout_time'] }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="Gender">Gender:</label>
+            </div>
+            <div class="col-75">
+                <p class="output4" id="work_Gender">{{ workout['Gender'] }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="NumOffParticipants">Number off participants:</label>
+            </div>
+            <div class="col-75">
+                <p class="output5" id="work_NumOffPart">{{ workout['number_of_participants'] }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="dur">Workout duration:</label>
+            </div>
+            <div class="col-75">
+                <p class="output5" id="work_NumOffPart">{{ workout['duration'] }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="Participants">Participants:</label>
+            </div>
+            <div class="col-75">
+                <div class="output6">
+                    <div id="containerWorkouts">
+                        <table id="work_Participants" class="table">
+                            <thead>
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Age</th>
+                                <th>UserName</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for  participant in participants %}
+                                <tr>
+                                    <td> {{ participant['First_name'] }}</td>
+                                    <td> {{ participant['Last_name'] }}</td>
+                                    <td> {{ participant['age'] }}</td>
+                                    <td> {{ participant['User_name'] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                    {% if answer_creator %}
+                        <div id="joinUNbutton">
+                            <a href="/join_workout" class="joinBtn"></a>
+                        </div>
+                    {% endif %}
+
+
+                    {% if Im_at_list %}
+                        <div id="joinUNbutton">
+                            <a href="/delete_Myself" class="delete_me"></a>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+        {% if participants_massage %}
+            <div class="badInput">
+                <h1>{{ participants_massage }}</h1>
+            </div>
+        {% endif %}
+
+        {% if gender_massage %}
+            <div class="badInput">
+                <h1> {{ gender_massage }} {{ workout['Gender'] }} only!</h1>
+            </div>
+        {% endif %}
+
+
+        <div class="row">
+            <div class="col-25">
+                <label for="place">Meet you here:</label>
+
+                <div id="map2"></div>
+                <div class="tab">
+                    <p>
+                    <div id="map"></div>
+                    <input name="add" id="add">
+                    <br><br><br>
+                    <input name="lat" id="lat" value="{{ workout['location_lat'] }}" type="hidden">
+                    <input name="lng" id="lng" value="{{ workout['location_lng'] }}" type="hidden">
+                    <input name="desc" id="desc" value="{{ workout['Workout_type'] }}" type="hidden">
+
+
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-75">
+                <p class="output7" id="work_Place"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
+
+
+{% endblock %}

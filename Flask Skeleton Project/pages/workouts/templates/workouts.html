@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Workouts{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('workouts.static', filename='css/workouts.css') }}"/>
+    <script defer src="{{ url_for('workouts.static' ,filename='js/workouts.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Profile</h1>
+    <h2>Workouts</h2>
+{% endblock %}
+
+{% block content %}
+    <div id="containerWorkouts">
+        <div id="AddBtnD">
+            <a href="/newWorkout" class="addBtn"></a>
+            <p>Add New</p>
+        </div>
+        <div class="myWorkoutsContainer">
+            <h1>Workouts Created By Me</h1>
+
+
+            {% for  workout in workoutsCreated %}
+                <div class="containerWorkout">
+                    <h3>Workout Type: {{ workout['Workout_type'] }}</h3>
+                    <h3> Date: {{ workout['workout_date'] }}</h3>
+                    <h3> Date: {{ workout['workout_time'] }}</h3>
+                    <form action="/WorkoutDetails" method="post">
+                        <input type="hidden" name="WorkoutID" value="{{ workout['trainingID'] }}">
+                        <input type="submit" value="Watch details" id="details">
+                    </form>
+                </div>
+            {% endfor %}
+
+
+
+            <h1>Workouts I Participant</h1>
+
+
+            {% for  pw in pws %}
+                <div class="containerWorkout">
+                    <h3>Workout Type: {{ pw['Workout_type'] }}</h3>
+                    <h3> Date: {{ pw['workout_date'] }}</h3>
+                    <h3> Date: {{ pw['workout_time'] }}</h3>
+                    <form action="/WorkoutDetails" method="post">
+                        <input type="hidden" name="WorkoutID" value="{{ pw['trainingID'] }}">
+                        <input type="submit" value="Watch details" id="details">
+                    </form>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+
+
+    <br>
+    <br><br><br><br><br>
+
+
+{% endblock %}

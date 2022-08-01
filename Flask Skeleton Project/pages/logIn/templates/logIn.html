@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('logIn.static', filename='css/logIn.css') }}"/>
+    <script defer src="{{ url_for('logIn.static' ,filename='js/logIn.js') }}"></script>
+
+</head>
+<body class="LogInBody">
+
+<div class="LogInTitle">
+    <h2 class="AnimationLogIn">
+        <span class="AnimationLogIn-num one">TrainGether</span>
+        <br>
+        <span class="AnimationLogIn-num two">LOG-IN</span>
+    </h2>
+    <div>
+        <h1>{{ msg }}</h1>
+    </div>
+</div>
+<div>
+    <button class="LogInBotton" onclick="ClickFunctionLogIn()" style="width:auto;"> Login</button>
+</div>
+<div><a href="/signUp">Don't have an acount?</a></div>
+<br><br><br>
+
+
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="{{ url_for('logIn.login') }}" method="post">
+        <div class="imgcontainer">
+            <span onclick="ClickFunctionCloseNone()" class="close" title="Close Modal">&times;</span>
+            <img src="{{ url_for('logIn.static', filename='media/SportMan.jpg') }}" alt="SportMan" class="SportMan">
+        </div>
+
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+            <br>
+            <button class="LogInBotton" type="submit">Login</button>
+        </div>
+
+
+    </form>
+</div>
+
+
+{% include('footer.html') %}
+</body>
+</html>

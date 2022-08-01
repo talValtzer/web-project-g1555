@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}Workouts{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('newWorkout.static', filename='css/newWorkout.css') }}"/>
+    <script defer src="{{ url_for('newWorkout.static' ,filename='js/newWorkout.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Details</h1>
+    <h2>Workouts-Create new community training :</h2>
+{% endblock %}
+
+{% block content %}
+    <form id="regForm" action="/createNew" method="post">
+
+
+        <!-- One "tab" for each step in the form: -->
+
+        <div class="tab">Training Info:
+
+            <p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="Academic">Type of training</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <select id="type" name="type">
+                        <option value="Yoga">Yoga</option>
+                        <option value="TRX">TRX</option>
+                        <option value="Running">Running</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Tennis">Tennis</option>
+                    </select>
+                </div>
+                <p>
+                <div class="row"></div>
+                <div class="col-25">
+                    <label for="Desc">Description:</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <input type="text" id="Desc" name="Desc" placeholder="Describe your training...">
+                </div>
+            </div>
+
+        </div>
+        <div class="tab">Details:
+            <p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="Academic">Gender participant</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <select id="Gender" name="Gender"><!-- add gender id for TRX-->
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Mixed">Mixed</option>
+                    </select>
+                </div>
+
+                <p>
+                <div class="row"></div>
+                <div class="col-25">
+                    <label for="Desc">Number of participants in your training:</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <input type="number" name="num_of_participants" id="num_of_participants" min="1" max="50" placeholder="Number...">
+                </div>
+
+            </div>
+        </div>
+        <div class="tab">Where:
+            <p>
+            <div id="map"></div>
+            <input name="lat" id="lat">
+            <input  name="lng" id="lng">
+
+
+            </p>
+
+        </div>
+
+        <div class="tab">Date training:
+            <p>
+            <div class="row"></div>
+            <div class="col-25">
+                <label for="Academic">Which day?</label>
+            </div>
+            </p>
+
+            <div class="col-75">
+                <input type="date" name="Date" id="Date" min="2022-01-02" ONCHANGE="TDate()" required> <!-- added Date id for TRX-->
+            </div>
+
+            <p>
+            <div class="row">
+
+                <div class="col-25">
+                    <label for="Academic">In What Time?</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <input name="time" type="time" id="Time">
+                </div> <!-- added Time id for TRX-->
+
+            </div>
+            <p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="Desc">Workout duration:</label>
+                </div>
+                </p>
+                <div class="col-75">
+                    <input type="number" name="duration" id="duration" min="1" max="90" placeholder="Minute...">
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <input type="submit" id="submit" value="submit"></button>
+
+            </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+    </form>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
+
+
+{% endblock %}

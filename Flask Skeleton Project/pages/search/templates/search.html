@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Search workout{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('search.static', filename='css/search.css') }}"/>
+    <script defer src="{{ url_for('search.static' ,filename='js/search.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>Search</h1>
+{% endblock %}
+
+{% block content %}
+    <nav>
+        <div class="see_details">
+            <!-- <div id="openSearchTable" class="modalTable">
+               <div class="SearchTableContainer">-->
+            <!--<span onclick="ClickFunctionCloseSearchTable()" class="close" title="Close Modal">&times;</span>-->
+            <form action="/search_all" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="PickTrainType">Workout type</label>
+                    </div>
+                    <div class="col-50">
+                        <select id="PickTrainType" name="PickTrainType">
+                            <option value="Yoga">Yoga</option>
+                            <option value="TRX">TRX</option>
+                            <option value="Running">Running</option>
+                            <option value="Swimming">Swimming</option>
+                            <option value="Tennis">Tennis</option>
+                             <option value="Pilates">Pilates</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="PickDate">Date</label>
+                    </div>
+                    <div class="col-50">
+                        <input type="date" id="PickDate" name="PickDate"
+                               min="2022-05-09" ONCHANGE="TDate()"
+                               required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="PickTimeRange">Range time</label>
+                    </div>
+                    <br>
+                    <div class="col-35">
+                        <label for="From" id="SearchFrom">From:</label>
+                        <br><br>
+                        <label for="To" id="SearchTo">To:</label>
+                    </div>
+                    <div class="col-35">
+                        <input type="time" id="PickTimeRange1" name="PickTimeRange1"
+                               required>
+                        <br><br>
+                        <input type="time" id="PickTimeRange2" name="PickTimeRange2"
+                               required>
+                    </div>
+                </div>
+                <br><br>
+                <form action="/search_all" method="post">
+                    <input type="submit" value="Search" id="SearchBtn">
+                </form>
+            </form>
+        </div>
+
+
+        {% if answer %}
+
+            <div id="tableCenter">
+                <table id="work_table" class="table">
+                    <thead>
+                    <tr>
+                        <th>Workout type</th>
+                        <th>user host</th>
+                        <th>Workout date</th>
+                        <th>Workout time</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    {% for workout in workouts %}
+                        <tr>
+                            <td>{{ workout['Workout_type'] }}</td>
+                            <td>{{ workout['user_host'] }}</td>
+                            <td>{{ workout['workout_date'] }}</td>
+                            <td>{{ workout['workout_time'] }}</td>
+                            <td>
+                                <form action="/WorkoutDetails" method="post">
+                                    <input type="hidden" name="WorkoutID" value="{{ workout['trainingID'] }}">
+                                    <input type="submit" value="Watch details" id="details">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endif %}
+        <!--<button id="SearchBtn" onclick="ClickSearchTable()"> Search</button>-->
+    </nav>
+    <br>
+{% endblock %}
